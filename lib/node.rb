@@ -4,7 +4,7 @@
 class Node
   attr_accessor :link, :value
 
-  def initialize(link, value)
+  def initialize(link = nil, value = nil)
     @link = link
     @value = value
   end
