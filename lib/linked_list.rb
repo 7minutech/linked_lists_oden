@@ -1,7 +1,11 @@
 require_relative "node"
 # defines a linked list type
 class LinkedList
+  private
+
   attr_accessor :head
+
+  public
 
   def initialize
     @head
@@ -44,6 +48,10 @@ class LinkedList
     counter
   end
 
+  def head
+    @head.value
+  end
+
   def to_s
     current = @head
     return "nil" if current.nil?
@@ -64,3 +72,4 @@ my_linked_list.append(6)
 my_linked_list.prepend(3)
 puts my_linked_list
 puts my_linked_list.size
+puts my_linked_list.head
