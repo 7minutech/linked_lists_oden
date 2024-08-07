@@ -71,6 +71,17 @@ class LinkedList
     current.value
   end
 
+  def pop
+    return if @head.nil?
+
+    current = @head
+    while current.next_node
+      prev_node = current
+      current = current.next_node
+      prev_node.next_node = nil if current.next_node.nil?
+    end
+  end
+
   def to_s
     current = @head
     return "nil" if current.nil?
@@ -90,4 +101,5 @@ my_linked_list.append(5)
 my_linked_list.append(6)
 my_linked_list.prepend(3)
 puts my_linked_list
-puts my_linked_list.at(5)
+my_linked_list.pop
+puts my_linked_list
