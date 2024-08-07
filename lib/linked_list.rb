@@ -96,6 +96,18 @@ class LinkedList
     false
   end
 
+  def find(value)
+    current_index = 0
+    current = @head
+    until current.nil?
+      return current_index if current.value == value
+
+      current = current.next_node
+      current_index += 1
+    end
+    nil
+  end
+
   def to_s
     current = @head
     return "nil" if current.nil?
@@ -116,3 +128,4 @@ my_linked_list.append(3)
 my_linked_list.append(4)
 puts my_linked_list
 puts my_linked_list.contains?(5)
+p my_linked_list.find(2)
