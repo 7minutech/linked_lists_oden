@@ -52,6 +52,12 @@ class LinkedList
     @head.value
   end
 
+  def tail
+    current = @head
+    current = current.next_node while current.next_node
+    current.value
+  end
+
   def to_s
     current = @head
     return "nil" if current.nil?
@@ -73,3 +79,4 @@ my_linked_list.prepend(3)
 puts my_linked_list
 puts my_linked_list.size
 puts my_linked_list.head
+puts my_linked_list.tail
