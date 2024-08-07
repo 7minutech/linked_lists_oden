@@ -66,6 +66,7 @@ class LinkedList
     while current_index < index
       current = current.next_node
       current_index += 1
+      return "Out of range" if current.nil?
     end
     current.value
   end
@@ -89,4 +90,4 @@ my_linked_list.append(5)
 my_linked_list.append(6)
 my_linked_list.prepend(3)
 puts my_linked_list
-puts my_linked_list.at(3)
+puts my_linked_list.at(5)
