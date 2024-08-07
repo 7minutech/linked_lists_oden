@@ -37,8 +37,8 @@ class LinkedList
     counter = 0
     unless head.nil?
       current = @head
-      # for the head and tail
-      counter += 2
+      # for the head
+      counter += 1
       while current.next_node
         current = current.next_node
         counter += 1
