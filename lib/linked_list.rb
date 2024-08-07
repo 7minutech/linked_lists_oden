@@ -50,7 +50,7 @@ class LinkedList
     counter
   end
 
-  def head
+  def get_head
     @head.value
   end
 
