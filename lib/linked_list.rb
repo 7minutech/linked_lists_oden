@@ -121,11 +121,3 @@ class LinkedList
     result
   end
 end
-my_linked_list = LinkedList.new
-my_linked_list.append(1)
-my_linked_list.append(2)
-my_linked_list.append(3)
-my_linked_list.append(4)
-puts my_linked_list
-puts my_linked_list.contains?(5)
-p my_linked_list.find(2)
