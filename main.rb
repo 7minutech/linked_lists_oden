@@ -11,3 +11,7 @@ list.append("snake")
 list.append("turtle")
 
 puts list
+list.remove_at(6)
+puts list
+list.insert_at("eagle", 2)
+puts list
