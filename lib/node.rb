@@ -2,14 +2,10 @@
 # with a link to the next node and a value
 # and a method to display the value
 class Node
-  attr_accessor :link, :value
+  attr_accessor :next_node, :value
 
-  def initialize(value = nil)
-    @next = nil
+  def initialize(value)
+    @next_node = nil
     @value = value
-  end
-
-  def display_value
-    p @value
   end
 end
