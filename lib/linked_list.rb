@@ -29,6 +29,21 @@ class LinkedList
     end
   end
 
+  def size
+    counter = 0
+    unless head.nil?
+      current = @head
+      # for the head and tail
+      counter += 2
+      while current.next_node
+        current = current.next_node
+        counter += 1
+      end
+      counter
+    end
+    counter
+  end
+
   def to_s
     current = @head
     return "nil" if current.nil?
@@ -48,3 +63,4 @@ my_linked_list.append(5)
 my_linked_list.append(6)
 my_linked_list.prepend(3)
 puts my_linked_list
+puts my_linked_list.size
