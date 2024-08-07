@@ -1,4 +1,6 @@
 require_relative "node"
+require "pry-byebug"
+
 # defines a linked list type
 class LinkedList
   private
@@ -58,6 +60,16 @@ class LinkedList
     current.value
   end
 
+  def at(index)
+    current_index = 0
+    current = @head
+    while current_index < index
+      current = current.next_node
+      current_index += 1
+    end
+    current.value
+  end
+
   def to_s
     current = @head
     return "nil" if current.nil?
@@ -77,6 +89,4 @@ my_linked_list.append(5)
 my_linked_list.append(6)
 my_linked_list.prepend(3)
 puts my_linked_list
-puts my_linked_list.size
-puts my_linked_list.head
-puts my_linked_list.tail
+puts my_linked_list.at(3)
