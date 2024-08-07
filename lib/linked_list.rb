@@ -72,13 +72,17 @@ class LinkedList
   end
 
   def pop
-    return if @head.nil?
-
-    current = @head
-    while current.next_node
-      prev_node = current
-      current = current.next_node
-      prev_node.next_node = nil if current.next_node.nil?
+    if size.zero?
+      nil
+    elsif size == 1
+      @head = nil
+    else
+      current = @head
+      while current.next_node
+        prev_node = current
+        current = current.next_node
+        prev_node.next_node = nil if current.next_node.nil?
+      end
     end
   end
 
@@ -96,10 +100,9 @@ class LinkedList
   end
 end
 my_linked_list = LinkedList.new
-my_linked_list.append(4)
-my_linked_list.append(5)
-my_linked_list.append(6)
-my_linked_list.prepend(3)
 puts my_linked_list
+puts my_linked_list.size
 my_linked_list.pop
+puts my_linked_list
+my_linked_list.append(4)
 puts my_linked_list
