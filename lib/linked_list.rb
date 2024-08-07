@@ -113,7 +113,6 @@ class LinkedList
       puts "Out of range"
       return nil
     end
-
     if index.zero?
       @head = @head.next_node
     else
@@ -126,6 +125,36 @@ class LinkedList
         current_index += 1
       end
       prev_node.next_node = next_node
+    end
+  end
+
+  def insert_at(value, index)
+    if index >= size
+      puts "Out of range"
+      return nil
+    end
+    # if inserted at first element.
+    if index.zero?
+      prev_head = @head
+      @head = Node.new(value)
+      @head.next_node = prev_head
+    else
+      new_node = Node.new(value)
+      current_index = 0
+      current = @head
+      until current_index == index
+        prev_node = current
+        current = current.next_node
+        current_index += 1
+      end
+      # if inserted at last element
+      if current.next_node.nil?
+        prev_node.next_node = current
+        current.next_node = new_node
+      else
+        prev_node.next_node = new_node
+        new_node.next_node = current
+      end
     end
   end
 
