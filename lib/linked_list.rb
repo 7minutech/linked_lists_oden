@@ -86,6 +86,16 @@ class LinkedList
     end
   end
 
+  def contains?(value)
+    current = @head
+    while current.next_node
+      return true if current.value == value
+
+      current = current.next_node
+    end
+    false
+  end
+
   def to_s
     current = @head
     return "nil" if current.nil?
@@ -100,9 +110,9 @@ class LinkedList
   end
 end
 my_linked_list = LinkedList.new
-puts my_linked_list
-puts my_linked_list.size
-my_linked_list.pop
-puts my_linked_list
+my_linked_list.append(1)
+my_linked_list.append(2)
+my_linked_list.append(3)
 my_linked_list.append(4)
 puts my_linked_list
+puts my_linked_list.contains?(5)
